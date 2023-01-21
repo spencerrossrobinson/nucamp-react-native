@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleFavorites } from "../features/favorites/favoritesSlice";
 import { useState } from "react";
 import { Rating, Input } from "react-native-elements";
+import { postComment } from "../features/comments/commentsSlice";
 
 const CampsiteInfoScreen = ({ route }) => {
   const { campsite } = route.params;
@@ -22,7 +23,7 @@ const CampsiteInfoScreen = ({ route }) => {
       rating,
       text,
     };
-    console.log("newComment", newComment);
+    dispatch(postComment(newComment));
     setShowModal(!showModal);
   };
   const resetForm = () => {
