@@ -1,7 +1,7 @@
 import RenderCampsite from "../features/campsites/RenderCampsite";
 import { FlatList, StyleSheet, Text, View, Button, Modal } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleFavorites } from "../features/favorites/favoritesSlice";
+import { toggleFavorite } from "../features/favorites/favoritesSlice";
 import { useState } from "react";
 import { Rating, Input } from "react-native-elements";
 import { postComment } from "../features/comments/commentsSlice";
@@ -65,7 +65,7 @@ const CampsiteInfoScreen = ({ route }) => {
             <RenderCampsite
               campsite={campsite}
               isFavorite={favorites.includes(campsite.id)}
-              markFavorite={() => dispatch(toggleFavorites(campsite.id))}
+              markFavorite={() => dispatch(toggleFavorite(campsite.id))}
               onShowModal={() => setShowModal(!showModal)}
             />
             <Text style={styles.commentsTitle}>Comments</Text>
