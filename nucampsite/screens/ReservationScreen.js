@@ -72,7 +72,7 @@ const ReservationScreen = () => {
         handleNotification: async () => ({
           shouldShowAlert: true,
           shouldPlaySound: true,
-          shouldSetBade: true,
+          shouldSetBadge: true,
         }),
       });
       Notifications.scheduleNotificationAsync({
